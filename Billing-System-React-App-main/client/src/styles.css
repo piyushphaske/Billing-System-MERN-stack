@@ -1,0 +1,445 @@
+/* client/src/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-color: #fc5959;
+  --secondary-color: #2ecc71;
+  --background-color: #f0f4f8;
+  --text-color: #2c3e50;
+  --hover-color: #2980b9;
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home {
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.stat-card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item {
+  /* flex: 1; */
+  width: 300px; /* Adjust as needed */
+  height: 120px; /* Adjust as needed */
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+.customer-list,.cashiers-container,.bill-history,.analysis,.settings {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.search-input, input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
+  width: 51.25%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.customer-item {
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr 0.5fr 0.5fr; /* Define column sizes for name, email, phone, edit, and delete buttons */
+  gap: 20px;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.customer-item span {
+  word-break: break-word; /* Prevent overflow for long text */
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 10px;
+}
+
+.customer-item:hover {
+  background-color: #f8f9fa;
+}
+
+.edit-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+
+.submit-btn {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.remove-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.submit-btn:hover, .add-btn:hover, .remove-btn:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.customer-form, .item-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.total {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-top: 25px;
+  text-align: right;
+  color: var(--primary-color);
+}
+
+/* Menu hierarchy styles */
+.menu-container {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+  margin-bottom: 30px;
+}
+
+.menu-category {
+  margin-bottom: 20px;
+}
+
+.menu-category-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.menu-subcategory {
+  margin-left: 20px;
+}
+
+.menu-subcategory-title {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+.menu-item-name {
+  font-weight: 400;
+}
+
+.menu-item-price {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Icons */
+.icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.customer-list, .bill-invoice,.analysis,.bill-history,.restaurant-info-container,.cashiers-container,.settings{
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.customer-item, .item-row {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+  }
+  
+  .stat-card {
+    margin-bottom: 20px;
+  }
+  
+  .customer-form, .item-row {
+    flex-direction: column;
+  }
+}
+
+.restaurant-info-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-info-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.restaurant-info-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.restaurant-info-container label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.restaurant-info-container input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.restaurant-info-container input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.restaurant-info-container button {
+  padding: 15px 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.restaurant-info-container button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.restaurant-info-container div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.bill-history {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.table-auto {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.table-auto thead th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #333;
+  text-align: center; /* Center-align the header row */
+}
+
+.table-auto th,
+.table-auto td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.table-auto tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-auto tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.3s;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.max-w-md {
+  max-width: 300px;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.input {
+  font-size: 1rem;
+}
+
+.select {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.company-branding {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+  min-width: fit-content;
+}
+
+.company-branding img {
+  height: 60px;
+  width: auto;
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+
+.company-branding span {
+  color: rgb(33, 155, 236);
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.bill-details-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.bill-details-modal {
+  background-color: var(--card-background);
+  box-shadow: 0 8px 16px var(--shadow-color);
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 90%;
+  width: 600px;
+  padding: 24px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.bill-details-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.bill-details-modal-close:hover {
+  color: #333;
+}
